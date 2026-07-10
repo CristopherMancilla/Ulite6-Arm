@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/cristopher-mancilla/ros2_ws/install/ros2_fundamentals_examples/include/**",
+        "/opt/ros/jazzy/include/**",
+        "/home/cristopher-mancilla/ros2_ws/src/ulite6_arm/ulite6_arm/include/**",
+        "/home/cristopher-mancilla/ros2_ws/src/ulite6_arm/ulite6_arm_description/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ros2",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}
