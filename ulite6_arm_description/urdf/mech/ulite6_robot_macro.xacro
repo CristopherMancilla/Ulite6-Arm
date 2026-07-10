@@ -21,7 +21,7 @@
     <xacro:if value="${is_ros2}">
       <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/ulite6.ros2_control.xacro" />
     </xacro:if>
-    <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/ulite6.urdf.xacro" />
+    <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/ulite6_arm.urdf.xacro" />
     <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/ulite6.transmission.xacro" />
     <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/ulite6.gazebo.xacro" />
 

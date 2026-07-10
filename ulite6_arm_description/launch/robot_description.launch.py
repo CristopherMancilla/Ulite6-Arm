@@ -25,16 +25,12 @@ def launch_setup(context, *args, **kwargs):
     velocity_control = LaunchConfiguration('velocity_control', default=False)
     add_gripper = LaunchConfiguration('add_gripper', default=False)
     add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=False)
-    add_bio_gripper = LaunchConfiguration('add_bio_gripper', default=False)
-    dof = LaunchConfiguration('dof', default=7)
-    robot_type = LaunchConfiguration('robot_type', default='xarm')
     ros2_control_plugin = LaunchConfiguration('ros2_control_plugin', default='uf_robot_hardware/UFRobotSystemHardware')
     joint_states_remapping = LaunchConfiguration('joint_states_remapping', default='joint_states')
-    xacro_file = LaunchConfiguration('xacro_file', default=PathJoinSubstitution([FindPackageShare('ulite6_arm_description'), 'urdf', 'xarm_device.urdf.xacro']))
+    xacro_file = LaunchConfiguration('xacro_file', default=PathJoinSubstitution([FindPackageShare('ulite6_arm_description'), 'urdf', 'ulite6_device.urdf.xacro']))
 
     add_realsense_d435i = LaunchConfiguration('add_realsense_d435i', default=False)
     add_d435i_links = LaunchConfiguration('add_d435i_links', default=True)
-    model1300 = LaunchConfiguration('model1300', default=False)
     robot_sn = LaunchConfiguration('robot_sn', default='')
     attach_to = LaunchConfiguration('attach_to', default='world')
     attach_xyz = LaunchConfiguration('attach_xyz', default='"0 0 0"')
@@ -64,14 +60,11 @@ def launch_setup(context, *args, **kwargs):
             'robot_description': get_xacro_content(
                 context,
                 xacro_file=xacro_file,
-                dof=dof,
-                robot_type=robot_type,
                 prefix=prefix,
                 hw_ns=hw_ns,
                 limited=limited,
                 effort_control=effort_control,
                 velocity_control=velocity_control,
-                model1300=model1300,
                 robot_sn=robot_sn,
                 attach_to=attach_to,
                 attach_xyz=attach_xyz,
@@ -82,7 +75,6 @@ def launch_setup(context, *args, **kwargs):
                 ros2_control_plugin=ros2_control_plugin,
                 add_gripper=add_gripper,
                 add_vacuum_gripper=add_vacuum_gripper,
-                add_bio_gripper=add_bio_gripper,
                 add_realsense_d435i=add_realsense_d435i,
                 add_d435i_links=add_d435i_links,
                 add_other_geometry=add_other_geometry,

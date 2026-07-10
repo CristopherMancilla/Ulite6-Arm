@@ -2,10 +2,10 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="xarm_gripper" >  
 
   <!-- xarm_gripper -->
-  <xacro:include filename="$(find ulite6_arm_description)/urdf/gripper/uflite_gripper.ros2_control.xacro" />
-  <xacro:include filename="$(find ulite6_arm_description)/urdf/gripper/uflite_gripper.urdf.xacro" />
-  <xacro:include filename="$(find ulite6_arm_description)/urdf/gripper/uflite_gripper.transmission.xacro" />
-  <xacro:include filename="$(find ulite6_arm_description)/urdf/gripper/uflite_gripper.gazebo.xacro" />
+  <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/uflite_gripper.ros2_control.xacro" />
+  <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/gripper.urdf.xacro" />
+  <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/uflite_gripper.transmission.xacro" />
+  <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/uflite_gripper.gazebo.xacro" />
 
   <xacro:macro name="uflite_gripper_macro" params="prefix:='' attach_to:='' ns:='xarm' attach_xyz:='0 0 0' attach_rpy:='0 0 0' 
     ros2_control_plugin:='uf_robot_hardware/UFRobotFakeSystemHardware' dof:=7 hard_interface:='PositionJointInterface' gripper_version:='G1'">

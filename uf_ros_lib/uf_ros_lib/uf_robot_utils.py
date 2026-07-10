@@ -18,7 +18,7 @@ from launch_param_builder import load_xacro
 
 
 def get_xacro_command(
-    xacro_file=PathJoinSubstitution([FindPackageShare('ulite6_arm_description'), 'urdf', 'xarm_device.urdf.xacro']), 
+    xacro_file=PathJoinSubstitution([FindPackageShare('ulite6_arm_description'), 'urdf', 'ulite6_device.urdf.xacro']), 
     mappings={}):
     command = [
         PathJoinSubstitution([FindExecutable(name='xacro')]),

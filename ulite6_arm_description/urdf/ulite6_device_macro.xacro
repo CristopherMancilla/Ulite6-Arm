@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="lite6_device">
-  <xacro:macro name="lite6_device" params="
+  <xacro:macro name="ulite6_device" params="
     prefix:=''
     hw_ns:='xarm'
     limited:=false
@@ -153,7 +153,7 @@
 
     <xacro:if value="${not add_gripper and add_vacuum_gripper}">
       <!-- Load Lite Vacuum Gripper Model URDF -->
-      <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/lite_vacuum_gripper.urdf.xacro" />
+      <xacro:include filename="$(find ulite6_arm_description)/urdf/mech/ulite6_vacuum_gripper.urdf.xacro" />
       <xacro:uflite_vacuum_gripper_urdf prefix="${prefix}" attach_to="${prefix}link_eef" />
     </xacro:if>
 
