@@ -14,7 +14,7 @@
       <xacro:uflite_gripper_ros2_control prefix="${prefix}" ros2_control_plugin="${ros2_control_plugin}" />
     </xacro:if>
 
-    <xacro:uflite_gripper_urdf prefix="${prefix}" attach_to="${attach_to}" attach_xyz="${attach_xyz}" attach_rpy="${attach_rpy}" gripper_version="${gripper_version}" />
+    <xacro:gripper_urdf prefix="${prefix}" attach_to="${attach_to}" attach_xyz="${attach_xyz}" attach_rpy="${attach_rpy}" gripper_version="${gripper_version}" />
 
     <xacro:uflite_gripper_transmission prefix="${prefix}" hard_interface="${hard_interface}" />
     <xacro:uflite_gripper_gazebo prefix="${prefix}" />

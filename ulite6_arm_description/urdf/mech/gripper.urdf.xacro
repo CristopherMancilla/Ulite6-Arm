@@ -30,7 +30,7 @@
         origin_xyz="0 0 0" 
         origin_rpy="0 0 0"
         material_name="${prefix}White" />
-      <xacro:common_link_collission 
+      <xacro:common_link_collision 
         mesh_filename="gripper/visual/shell"  
         origin_xyz="0 0 0" 
         origin_rpy="0 0 0" />
@@ -76,7 +76,7 @@
         origin_rpy="0 0 0"
         material_name="${prefix}White" />
       <xacro:common_link_collision 
-        mesh_filename="gripper/lite/visual/finger2${name_suffix}"  
+        mesh_filename="gripper/visual/finger2${name_suffix}"  
         origin_xyz="0 0 0" 
         origin_rpy="0 0 0" />
     </link>

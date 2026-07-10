@@ -37,7 +37,7 @@ def get_xacro_command(
 
 
 def get_xacro_content(context,
-    xacro_file=Path(get_package_share_directory('ulite6_arm_description')) / 'urdf' / 'xarm_device.urdf.xacro', 
+    xacro_file=Path(get_package_share_directory('ulite6_arm_description')) / 'urdf' / 'ulite6_device.urdf.xacro', 
     **kwargs):
     xacro_file = Path(xacro_file.perform(context)) if isinstance(xacro_file, LaunchConfiguration) else Path(xacro_file) if isinstance(xacro_file, str) else xacro_file
     
