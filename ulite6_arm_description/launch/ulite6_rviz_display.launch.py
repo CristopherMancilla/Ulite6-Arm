@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
-# Software License Agreement (BSD License)
-#
-# Copyright (c) 2021, UFACTORY, Inc.
-# All rights reserved.
-#
-# Author: Vinman <vinman.wen@ufactory.cc> <vinman.cub@gmail.com>
-
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
+from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, ThisLaunchFileDir
+from launch.substitutions import LaunchConfiguration
+from ament_index_python.packages import get_package_share_directory # <- Nueva importación
+import os
 
 def generate_launch_description():
     prefix = LaunchConfiguration('prefix', default='')
@@ -20,10 +15,12 @@ def generate_launch_description():
     add_gripper = LaunchConfiguration('add_gripper', default=False)
     add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=False)
 
-    # robot rviz launch
-    # xarm_description/launch/_robot_rviz_display.launch.py
+    # Obtenemos la ruta absoluta de la carpeta 'share' instalada del paquete
+    pkg_share = get_package_share_directory('ulite6_arm_description')
+
+    # robot rviz launch usando la ruta absoluta directa en lugar de 'ThisLaunchFileDir()'
     robot_rviz_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([ThisLaunchFileDir(), '/robot_rviz_display.launch.py']),
+        PythonLaunchDescriptionSource(os.path.join(pkg_share, 'launch', 'robot_rviz_display.launch.py')),
         launch_arguments={
             'prefix': prefix,
             'hw_ns': hw_ns,

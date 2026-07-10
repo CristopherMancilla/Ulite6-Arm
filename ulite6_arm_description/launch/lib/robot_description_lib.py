@@ -11,7 +11,7 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def get_xacro_file_content(
-    xacro_file=PathJoinSubstitution([FindPackageShare('xarm_description'), 'urdf', 'xarm_device.urdf.xacro']), 
+    xacro_file=PathJoinSubstitution([FindPackageShare('ulite6_arm_description'), 'urdf', 'xarm_device.urdf.xacro']), 
     arguments={}):
     command = [
         PathJoinSubstitution([FindExecutable(name='xacro')]),

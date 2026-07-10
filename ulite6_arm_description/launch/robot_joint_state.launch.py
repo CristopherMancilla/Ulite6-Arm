@@ -49,7 +49,7 @@ def launch_setup(context, *args, **kwargs):
     gripper_version = LaunchConfiguration('gripper_version', default='G1')
 
     # robot description launch
-    # xarm_description/launch/_robot_description.launch.py
+    # ulite6_arm_description/launch/_robot_description.launch.py
     robot_description_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(PathJoinSubstitution([FindPackageShare('ulite6_arm_description'), 'launch', 'robot_description.launch.py'])),
         launch_arguments={

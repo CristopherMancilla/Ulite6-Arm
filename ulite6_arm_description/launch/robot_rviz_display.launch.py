@@ -46,7 +46,7 @@ def generate_launch_description():
     gripper_version = LaunchConfiguration('gripper_version', default='G1')
     
     # robot joint state launch
-    # xarm_description/launch/_robot_joint_state.launch.py
+    # ulite6_arm_description/launch/_robot_joint_state.launch.py
     robot_joint_state_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([ThisLaunchFileDir(), '/robot_joint_state.launch.py']),
         launch_arguments={

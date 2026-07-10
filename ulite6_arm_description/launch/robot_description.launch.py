@@ -30,7 +30,7 @@ def launch_setup(context, *args, **kwargs):
     robot_type = LaunchConfiguration('robot_type', default='xarm')
     ros2_control_plugin = LaunchConfiguration('ros2_control_plugin', default='uf_robot_hardware/UFRobotSystemHardware')
     joint_states_remapping = LaunchConfiguration('joint_states_remapping', default='joint_states')
-    xacro_file = LaunchConfiguration('xacro_file', default=PathJoinSubstitution([FindPackageShare('xarm_description'), 'urdf', 'xarm_device.urdf.xacro']))
+    xacro_file = LaunchConfiguration('xacro_file', default=PathJoinSubstitution([FindPackageShare('ulite6_arm_description'), 'urdf', 'xarm_device.urdf.xacro']))
 
     add_realsense_d435i = LaunchConfiguration('add_realsense_d435i', default=False)
     add_d435i_links = LaunchConfiguration('add_d435i_links', default=True)

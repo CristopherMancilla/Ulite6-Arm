@@ -331,7 +331,7 @@ class MoveItConfigsBuilder(ParameterBuilder):
             'add_other_geometry': add_other_geometry,
         }
 
-        self.__urdf_package = Path(get_package_share_directory('xarm_description'))
+        self.__urdf_package = Path(get_package_share_directory('ulite6_arm_description'))
         self.__urdf_file_path = Path('urdf/xarm_device.urdf.xacro')
         self.__srdf_file_path = Path('srdf/xarm.srdf.xacro')
 
@@ -1044,7 +1044,7 @@ class DualMoveItConfigsBuilder(ParameterBuilder):
             'add_other_geometry_2': add_other_geometry_2,
         }
 
-        self.__urdf_package = Path(get_package_share_directory('xarm_description'))
+        self.__urdf_package = Path(get_package_share_directory('ulite6_arm_description'))
         self.__urdf_file_path = Path('urdf/dual_xarm_device.urdf.xacro')
         self.__srdf_file_path = Path('srdf/dual_xarm.srdf.xacro')
 
