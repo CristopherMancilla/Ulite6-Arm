@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane
+      </uri>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun
+      </uri>
+    </include>
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Table</uri>
+      <name>table</name>
+      <pose>0.0 -0.84 0 0 0 0</pose>
+    </include>
+
+    <!-- Lienzo blanco de 40x40 cm sobre la mesa, dentro del espacio de
+         trabajo del robot (base en (-0.2, -0.5, 1.021), alcance ~0.44 m):
+         el centro del lienzo queda a 0.28 m de la base.
+         La superficie de la mesa (1.5 x 0.8 m) queda a z=1.015 -->
+    <model name="canvas">
+      <static>true</static>
+      <pose>-0.2 -0.78 1.0175 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.4 0.4 0.005</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.4 0.4 0.005</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <!-- (2022-12-20) humble: to add realistic gravity changes from [0 0 0] to [0 0 -9.81] -->
+      <gravity>0 0 -9.81</gravity>
+    </physics>
+
+  </world>
+</sdf>

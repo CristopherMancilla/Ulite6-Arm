@@ -1,0 +1,60 @@
+# ganancia P del lazo de posicion de gz_ros2_control (el valor por
+# defecto 0.1 es demasiado bajo y el brazo queda rezagado con gravedad);
+# se usa /** porque el nodo del plugin la lee con su propio nombre
+/**:
+  ros__parameters:
+    position_proportional_gain: 60.0
+
+controller_manager:
+  ros__parameters:
+    update_rate: 150  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    ulite6_traj_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    ulite6_gripper_traj_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+ulite6_gripper_traj_controller:
+  ros__parameters:
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    joints:
+      - finger_joint1
+    interface_name: position
+
+ulite6_traj_controller:
+  ros__parameters:
+    # solo posicion: si tambien se reclama velocity, gz_ros2_control aplica
+    # unicamente la velocidad (feedforward) y el error de posicion nunca se
+    # corrige (queda offset permanente tras cada esquina del trazo)
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    joints:
+      - ${prefix}joint1
+      - ${prefix}joint2
+      - ${prefix}joint3
+      - ${prefix}joint4
+      - ${prefix}joint5
+      - ${prefix}joint6
+    constraints:
+      goal_time: 2.0
+      stopped_velocity_tolerance: 0.0
+      joint1: {trajectory: 1.0, goal: 0.02}
+      joint2: {trajectory: 1.0, goal: 0.02}
+      joint3: {trajectory: 1.0, goal: 0.02}
+      joint4: {trajectory: 1.0, goal: 0.02}
+      joint5: {trajectory: 1.0, goal: 0.02}
+      joint6: {trajectory: 1.0, goal: 0.02}
+    interface_name: position
+    state_publish_rate: 25.0
+    action_monitor_rate: 10.0

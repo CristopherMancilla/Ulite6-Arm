@@ -1,20 +1,13 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ulite6_arm</name>
+  <name>ulite6_arm_moveit_config</name>
   <version>0.0.0</version>
-  <description>xarm robotic series (ulite6) by Ufactory robotics (metapackage)</description>
+  <description>Moveit configuration, launch files and SRDF files for ulite6 robot</description>
   <maintainer email="crimrami@espol.edu.ec">cristopher-mancilla</maintainer>
   <license>BSD-3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-  
-  <exec_depend>ulite6_arm_bringup</exec_depend>
-  <exec_depend>ulite6_arm_description</exec_depend>
-  <exec_depend>ulite6_arm_gazebo</exec_depend>
-  <exec_depend>ulite6_arm_moveit_config</exec_depend>
-  <exec_depend>ulite6_arm_system_tests</exec_depend>
-  
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
